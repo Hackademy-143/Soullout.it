@@ -10,4 +10,5 @@ class Annunci extends Component
     {
         return view('livewire.annunci');
     }
+
 }

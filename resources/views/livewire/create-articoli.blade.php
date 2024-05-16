@@ -15,7 +15,12 @@
                 <div class="mb-3">
                     <label class="form-label">Descrizione</label>
                     <textarea name="" id="" cols="30" rows="10" class="form-control" wire:model.blur="descrizione">></textarea>
-                    
+                        
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Prezzo</label>
+                    <input type="text" class="form-control" wire:model.blur="prezzo">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
