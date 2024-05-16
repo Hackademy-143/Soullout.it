@@ -2,7 +2,10 @@
 
 namespace App\Livewire;
 
+use App\Models\Article;
 use Livewire\Component;
+
+
 
 class CreateArticoli extends Component
 {
@@ -12,14 +15,14 @@ class CreateArticoli extends Component
     public $prezzo;
 
     public function create_article(){
-        Annunci::create(
+        Article::create(
             [
                 'nome'=> $this->nome,
                 'provenienza'=> $this->provenienza,
                 'descrizione'=> $this->descrizione,
                 'prezzo'=> $this->prezzo
-            ]  
-        );  
+            ]
+        );
     }
 
     public function render()
