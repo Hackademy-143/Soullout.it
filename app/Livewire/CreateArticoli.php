@@ -23,6 +23,8 @@ class CreateArticoli extends Component
                 'prezzo'=> $this->prezzo
             ]
         );
+        $this->reset();
+        session()->flash('status', 'Articolo Creato');
     }
 
     public function render()
