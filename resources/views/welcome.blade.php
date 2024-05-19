@@ -2,10 +2,8 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-2 mt-5">
-            <a class="btn btn-success" href="{{route('article.create')}}" role="button" >Inserisci il tuo prodotto</a>
+        <div class="col-12 mt-5">
         </div>
     </div>
 </div>
-
 </x-layout>
