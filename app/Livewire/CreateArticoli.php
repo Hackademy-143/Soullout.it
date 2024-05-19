@@ -4,8 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Article;
 use Livewire\Component;
-
-
+use Livewire\Attributes\Validate;
 
 class CreateArticoli extends Component
 {
@@ -19,16 +18,14 @@ class CreateArticoli extends Component
     public $prezzo;
     #[Validate('required|min:5')]
     public $category;
-
     protected $messages = [
         'nome.min' => 'Il nome è troppo corto',
     ];
-    // public function updated($propertyName){
-    //     $this->validateOnly($propertyName);
-    // }
-
+    public function updated($propertyName){
+        $this->validateOnly($propertyName);
+    }
     public function create_article(){
-        // $this->validate();
+        $this->validate();
         Article::create(
             [
                 'nome'=> $this->nome,
@@ -40,7 +37,6 @@ class CreateArticoli extends Component
         $this->reset();
         session()->flash('status', 'Articolo Creato');
     }
-
     public function render()
     {
         return view('livewire.create-articoli');

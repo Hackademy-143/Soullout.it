@@ -18,17 +18,23 @@
                 <div class="mb-3">
                     <label class="form-label">Provenienza</label>
                     <input type="text" class="form-control" wire:model.blur="provenienza">
-                    @error('provenienza') <span class="error bg-danger">{{ $message }}</span> @enderror
+                    @error('provenienza')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Descrizione</label>
                     <textarea name="" id="" cols="30" rows="10" class="form-control" wire:model.blur="descrizione">></textarea>
-                    @error('descrizione') <span class="error bg-danger">{{ $message }}</span> @enderror
+                    @error('descrizione')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Prezzo</label>
                     <input type="text" class="form-control" wire:model.blur="prezzo">
-                    @error('prezzo') <span class="error bg-danger">{{ $message }}</span> @enderror
+                    @error('prezzo')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label for="category">Categoria</label>
