@@ -10,7 +10,7 @@
             <form wire:submit.prevent="create_article">
                 <div class="mb-3">
                     <label class="form-label">Nome</label>
-                    <input type="text" class="form-control @error('title') is-invalid @enderror"  wire:model.blur="nome">
+                    <input type="text" class="form-control"  wire:model.blur="nome">
                     @error('nome')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror

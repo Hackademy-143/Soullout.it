@@ -10,16 +10,21 @@ class CreateArticoli extends Component
 {
     #[Validate('required|min:5')]
     public $nome;
-    #[Validate('required|min:5')]
+    #[Validate('required|min:3')]
     public $provenienza;
-    #[Validate('required|min:5|max:50')]
+    #[Validate('required|min:10|max:50')]
     public $descrizione;
-    #[Validate('required|min:5')]
+    #[Validate('required|min:1')]
     public $prezzo;
-    #[Validate('required|min:5')]
+    #[Validate('required')]
     public $category;
+
     protected $messages = [
         'nome.min' => 'Il nome è troppo corto',
+        'provenienza.min' => 'Inserire una città valida',
+        'descrizione.min' => 'Inserire una descrizione del prodotto',
+        'prezzo.min' => 'Inserire il prezzo del prodotto',
+        'category' => 'La categoria è richiesta',
     ];
     public function updated($propertyName){
         $this->validateOnly($propertyName);
