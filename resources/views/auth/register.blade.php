@@ -27,7 +27,7 @@
                         <label class="form-label">Conferma Password</label>
                         <input type="password" class="form-control" name="password_confirmation">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
                 </form>
             </div>
         </div>

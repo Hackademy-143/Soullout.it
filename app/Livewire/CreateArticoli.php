@@ -2,26 +2,46 @@
 
 namespace App\Livewire;
 
+use App\Models\Article;
 use Livewire\Component;
+use Livewire\Attributes\Validate;
 
 class CreateArticoli extends Component
 {
+    #[Validate('required|min:5')]
     public $nome;
+    #[Validate('required|min:3')]
     public $provenienza;
+    #[Validate('required|min:10|max:50')]
     public $descrizione;
+    #[Validate('required|min:1')]
     public $prezzo;
+    #[Validate('required')]
+    public $category;
 
+    protected $messages = [
+        'nome.min' => 'Il nome è troppo corto',
+        'provenienza.min' => 'Inserire una città valida',
+        'descrizione.min' => 'Inserire una descrizione del prodotto',
+        'prezzo.min' => 'Inserire il prezzo del prodotto',
+        'category' => 'La categoria è richiesta',
+    ];
+    public function updated($propertyName){
+        $this->validateOnly($propertyName);
+    }
     public function create_article(){
-        Annunci::create(
+        $this->validate();
+        Article::create(
             [
                 'nome'=> $this->nome,
                 'provenienza'=> $this->provenienza,
                 'descrizione'=> $this->descrizione,
-                'prezzo'=> $this->prezzo
-            ]  
-        );  
+                'prezzo'=> $this->prezzo,
+            ]
+        );
+        $this->reset();
+        session()->flash('status', 'Articolo Creato');
     }
-
     public function render()
     {
         return view('livewire.create-articoli');
