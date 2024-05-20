@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class FrontController extends Controller
 {
     public function home (){
-        $articles = Article::take(6)->get()->sortByDesc('created_at');
+        $articles = Article::orderBy('created_at','desc')->take(3)->get();
         return view ('welcome' , compact('articles'));
     }
     public function categoryShow(Category $category){
