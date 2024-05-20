@@ -18,10 +18,9 @@ class FrontController extends Controller
 
     public function prodottiShow(Article $article){
         $articles = Article::orderBy('created_at','desc')->get();
-       return view('prodottiShow', compact('articles'));
+        return view('prodottiShow', compact('articles'));
     }
-    
     public function categoryDet(Article $article){
-        return view('categoryDet' , compact('articles'));
+        return view('categoryDet' , compact('article'));
     }
 }
