@@ -17,7 +17,7 @@ class CreateArticoli extends Component
     #[Validate('required|min:1')]
     public $prezzo;
     #[Validate('required')]
-    public $category;
+    public $category_id;
 
     protected $messages = [
         'nome.min' => 'Il nome è troppo corto',
@@ -37,6 +37,8 @@ class CreateArticoli extends Component
                 'provenienza'=> $this->provenienza,
                 'descrizione'=> $this->descrizione,
                 'prezzo'=> $this->prezzo,
+                'user_id'=> auth()->id(),
+                'category_id'=> $this->category_id,
             ]
         );
         $this->reset();
