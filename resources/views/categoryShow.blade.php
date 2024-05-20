@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 text-center">
                 <h1 >Esplora la categoria {{$category->categoria}}</h1>
             </div>
         </div>
@@ -19,8 +19,8 @@
                 <p class="card-text">{{$article->provenienza}}</p>
                 <p class="card-text">{{$article->descrizione}}</p>
                 <p class="card-text">{{$article->price}}</p>
-                <a href="" class="btn">Visualizza</a>
-                <p class="my-2"> Pubblicato il: {{$article->created_at->format('d/m/Y')}} 
+                <a href="{{route('categoryDet')}}" class="btn">Visualizza</a>
+                <p class="my-2"> Pubblicato il: {{$article->created_at->format('d/m/Y')}}
                     <br> Autore : {{$article->user->name ?? ' ' }} </p>
         </div>
       </div>

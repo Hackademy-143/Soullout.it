@@ -1,7 +1,8 @@
 <x-layout>
 <div class="container">
     <div class="row">
-        <div class="col-12 mt-5">
+        <div class="col-12 mt-5 text-center">
+            <h1>SoullOut</h1>
         </div>
     </div>
 </div>
