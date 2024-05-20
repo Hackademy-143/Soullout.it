@@ -7,7 +7,7 @@ use App\Http\Controllers\ArticleController;
 
 Route::get('/', [FrontController::class , 'home'])->name("welcome");
 Route::get('/categoria/{category}', [FrontController::class , 'categoryShow'])->name("categoryShow");
-
+Route::get('/prodotti', [FrontController::class, 'prodottiShow'])->name('prodottiShow');
 Route::middleware(['auth'])->group(function(){
 Route::get('/article/create', [ArticleController::class , 'create_article'])->name("article.create");
 });

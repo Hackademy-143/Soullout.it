@@ -15,4 +15,9 @@ class FrontController extends Controller
     public function categoryShow(Category $category){
         return view('categoryShow', compact('category'));
     }
+
+    public function prodottiShow(Article $article){
+        $articles = Article::orderBy('created_at','desc')->get();
+       return view('prodottiShow', compact('articles'));
+    }
 }
