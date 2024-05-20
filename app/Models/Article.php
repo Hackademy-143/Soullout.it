@@ -13,7 +13,7 @@ class Article extends Model
 
     protected $fillable =[
 
-        'nome','provenienza','descrizione','prezzo','user_id'
+        'nome','provenienza','descrizione','prezzo','user_id', 'category_id'
     ];
 
     public function user(){

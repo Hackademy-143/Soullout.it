@@ -38,7 +38,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="category">Categoria</label>
-                    <select wire:model.defer="category" id="category" class="form-control">
+                    <select wire:model.defer="category_id" id="category" class="form-control">
                         <option value="">Scegli la Categoria</option>
                         @foreach ($categories as $category)
                         <option value="{{$category->id}}">{{$category->categoria}}</option>
