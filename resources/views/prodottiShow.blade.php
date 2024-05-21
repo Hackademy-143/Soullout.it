@@ -1,12 +1,12 @@
 <x-layout>
     <div class="container">
         <div class="row">
-            <div class="col-12 mt-5 text-center">
-                <h1>Prodotti</h1>
+            <div class="col-12 mt-1 text-center">
+                <h1 class="display-1">Prodotti</h1>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             @foreach ($articles as $article)
             <div class="col-12 col-md-4 my-4">

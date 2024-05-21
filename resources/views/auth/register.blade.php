@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid text-primary">
+    <div class="container-fluid ">
         <div class="row justify-content-center">
             <div class="col-12 text-center">
                 <h1 class="display-1 mb-5 mt-5">Registrati</h1>

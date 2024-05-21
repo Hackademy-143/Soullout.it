@@ -1,14 +1,13 @@
 <x-layout>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 mt-3 text-center italymap">
-                <h1 class=" fw-bold">SoullOut</h1>
-                {{-- <div class="italymap">
-                </div> --}}
+            <h1 class="display-1 fw-bold text-center">SoullOut</h1>
+            <div class="col-12 text-center italymap">
             </div>
         </div>
     </div>
     <div class="container">
+        <h2 class="text-center mt-3">I prodotti più recenti</h2>
         <div class="row justify-content-center">
             @foreach ($articles as $article)
             <div class="col-12 col-md-4 my-4">
@@ -29,5 +28,5 @@
         </div>
     </div>
 
-                
+
 </x-layout>

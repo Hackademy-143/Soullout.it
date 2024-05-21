@@ -1,26 +1,26 @@
 *{
     font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
+    /* font-optical-sizing: auto; */
+    /* font-weight: 100; */
     font-style: normal;
 }
-
 
 .card{
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 h1{
-    margin-top: 40px;
-    font-size: 150px;
+    /* margin-top: 40px; */
+    /* font-size: 80px; */
     /* height: 100vh; */
     text-shadow:4px 4px 7px rgba(142, 48, 48, 0.65);
-    backdrop-filter: blur(3px);
+    /* backdrop-filter: blur(3px); */
 }
 .italymap{
-    height: 100vh;
+    height: 75vh;
     width: 100vw;
-    background-image: url(/public/img/Italymap.jpg);
-    background-size: cover;
+    background-image: url(/public/img/Italymap1.png);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: rgba(85, 4, 4, 0.5) 1.95px 1.95px 2.6px;
 }

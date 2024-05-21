@@ -2,11 +2,11 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 >Esplora la categoria {{$category->categoria}}</h1>
+                <h1 class="display-1" >Esplora la categoria #{{$category->categoria}}</h1>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="row">
@@ -21,7 +21,7 @@
                                 <p class="card-text">{{$article->price}}</p>
                                 <a href="{{route('categoryDet', $article)}}" class="btn">Visualizza</a>
                                 <p class="my-2"> Pubblicato il: {{$article->created_at->format('d/m/Y')}}
-                                    <br> Autore : {{$article->user->name ?? ' ' }} </p>
+                                    <br> Venditore : {{$article->user->name ?? ' ' }} </p>
                                 </div>
                             </div>
                         </div>
