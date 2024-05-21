@@ -4,6 +4,7 @@ use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RevisorController;
 
 Route::get('/', [FrontController::class , 'home'])->name("welcome");
 Route::get('/categoria/{category}', [FrontController::class , 'categoryShow'])->name("categoryShow");
@@ -13,4 +14,7 @@ Route::get('/dettaglio/{article}' , [FrontController::class, 'categoryDet'])->na
 
 Route::middleware(['auth'])->group(function(){
 Route::get('/article/create', [ArticleController::class , 'create_article'])->name("article.create");
+Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
+Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
+Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
 });
