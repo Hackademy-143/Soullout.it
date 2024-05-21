@@ -5,6 +5,17 @@
     font-style: normal;
 }
 
+:root{
+    --darkGreenCustom:#386641;
+    --greenCustom:#6a994e;
+    --greenLightCustom:#a7c957;
+    --pannaWhite:#f2e8cf;
+    --greenSuperLight:#e9f5db;
+    --redCustom:#bc4749;
+}
+
+
+
 .card{
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
@@ -23,4 +34,35 @@ h1{
     background-position: center;
     background-repeat: no-repeat;
     box-shadow: rgba(85, 4, 4, 0.5) 1.95px 1.95px 2.6px;
+}
+
+
+/* Stile Navbar */
+.navbar {
+    background-color: var(--greenSuperLight);
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+.rotate-brand {
+    animation: rotate 1s linear forwards;
+}
+
+.navbar-toggler {
+    color: var(--greenLightCustom);
+    background-color: var(--pannaWhite);
+}
+
+.nav-link {
+    transition: 0.5s;
+    position: relative;
+}
+
+.nav-link:hover {
+    transition: 0.5s;
+    color: var(--redCustom);
+}
+
+.navbar-brand:hover {
+    color: var(--darkGreenCustom);
 }

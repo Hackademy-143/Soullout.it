@@ -1,7 +1,7 @@
 <x-layout>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row justify-content-center">
-            <h1 class="display-1 fw-bold text-center">SoullOut</h1>
+            <h1 class="display-1 fw-bold text-center p-3">SoullOut</h1>
             <div class="col-12 text-center italymap">
             </div>
         </div>
