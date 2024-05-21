@@ -1,12 +1,12 @@
 <x-layout>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="display-1" >Esplora la categoria #{{$category->categoria}}</h1>
+                <h1 class="display-1 p-3" >Esplora la categoria #{{$category->categoria}}</h1>
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="row">
@@ -27,11 +27,12 @@
                         </div>
                         @empty
                         <div class="col-12">
-                            <div class="col-12">
-                                <p > Non sono presenti annunci per questa categoria! </p>
-                                <p > Pubblicane uno: <a href="#" class="btn btn-success">Nuovo annuncio</a></p>
-                            </div>
-                            @endforelse
+                            <p > Non sono presenti annunci per questa categoria! </p>
+                            <p > Pubblicane uno: <a href="#" class="btn btn-success">Nuovo annuncio</a></p>
                         </div>
+                        @endforelse
                     </div>
-                </x-layout>
+                </div>
+            </div>
+        </div>
+    </x-layout>

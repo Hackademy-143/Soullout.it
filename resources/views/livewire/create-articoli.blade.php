@@ -1,12 +1,12 @@
 <div class="container-fluid">
     <div class="row justify-content-center mt-5">
-        <div class="col-8">
+        <div class="col-10">
             @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
             </div>
             @endif
-            <h2 class="p-3 display-5">Inserisci il tuo prodotto</h2>
+            <h1 class="p-3 display-4">Inserisci il tuo prodotto</h1>
             <form wire:submit.prevent="create_article">
                 <div class="mb-3">
                     <label class="form-label">Nome</label>

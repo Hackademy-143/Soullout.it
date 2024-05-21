@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 text-center">
-                <h1 class="display-1 mb-5 mt-5">Accedi</h1>
+                <h1 class="display-1 p-3 mt-5">Accedi</h1>
             </div>
         </div>
     </div>

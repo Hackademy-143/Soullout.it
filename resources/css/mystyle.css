@@ -14,8 +14,6 @@
     --redCustom:#bc4749;
 }
 
-
-
 .card{
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
@@ -28,7 +26,7 @@ h1{
 }
 .italymap{
     height: 75vh;
-    width: 100vw;
+    width: 50vw;
     background-image: url(/public/img/Italymap1.png);
     background-size: contain;
     background-position: center;

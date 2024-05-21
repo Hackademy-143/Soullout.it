@@ -14,11 +14,11 @@
 
 </head>
 <body>
-  <x-nav/>
-  <div class="min-vh-100">
+    <x-nav/>
+    <div class="min-vh-100">
     {{$slot}}
-  </div>
+    </div>
+    <x-footer/>
 
-  <x-footer/>
 </body>
 </html>
