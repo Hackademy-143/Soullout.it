@@ -38,15 +38,21 @@
                     </a>
 
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisci il tuo prodotto</a>
+                        <li>
+                            <a class="dropdown-item" href="{{ route('article.create') }}">Inserisci il tuo prodotto</a>
                         </li>
-                        <li><a class="dropdown-item" href="">Items</a></li>
-                        <li><a class="dropdown-item" href="">Feedback</a></li>
+                        <li>
+                            <a class="dropdown-item" href="">Items</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="">Feedback</a>
+                        </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">Logout</a>
+                        <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">Logout</a>
                         </li>
                         <form action="{{ route('logout') }}" method="POST" id="logout-form" class="d-none">
                             @csrf

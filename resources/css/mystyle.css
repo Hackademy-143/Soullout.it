@@ -25,7 +25,7 @@ h1{
     /* backdrop-filter: blur(3px); */
 }
 .italymap{
-    height: 75vh;
+    height: 90vh;
     width: 50vw;
     background-image: url(/public/img/Italymap1.png);
     background-size: contain;
