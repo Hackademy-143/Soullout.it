@@ -67,21 +67,20 @@
                         @if (Auth::user()->is_revisor)
                             <li class="nav-item">
                                 <a class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25"
-                                    href="{{ route('revisor.index') }}">Zona Revisore</a>
-                                <span
-                                    class="position-absolute top-1 start-80 translate-middle badge rounded-pill bg-danger">{{ \App\Models\Article::toBeRevisedCount() }}</span>
+                                    href="{{ route('revisor.index') }}">Zona Revisore <span
+                                    class="position-absolute right-100 translate-middle-end badge rounded-pill bg-danger">{{ \App\Models\Article::toBeRevisedCount()}}</span></a>
                             </li>
                         @endif
                     @endauth
                 @endguest
             </ul>
-            <form class="d-flex" role="search" action="{{ route('article.search') }}" metheod="GET">
-                <div class="input-group">
-                    <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success input-group-text" type="submit"
-                        id="basic-addon2">Search</button>
-                </div>
-            </form>
         </div>
+        <form class="d-flex" role="search" action="{{ route('article.search') }}" metheod="GET">
+            <div class="input-group">
+                <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success input-group-text" type="submit"
+                    id="basic-addon2">Search</button>
+            </div>
+        </form>
     </div>
 </nav>
