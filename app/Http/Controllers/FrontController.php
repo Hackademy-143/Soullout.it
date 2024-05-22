@@ -25,4 +25,10 @@ class FrontController extends Controller
     public function categoryDet(Article $article){
         return view('categoryDet' , compact('article'));
     }
+
+    public function searchArticle(Request $request){
+        $query = $request->input('query');
+        $articles = Article::search($query)->where('is_accepted', true)->get();
+        return view('article.searched', ['articles' => $articles, 'query' => $query]);
+    }
 }
