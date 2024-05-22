@@ -2,6 +2,11 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <h1 class="display-1 fw-bold text-center p-5">SoullOut</h1>
+            @if (session()->has('errorMessage'))
+            <div class="alert-danger alert text-center w-50 rounded shadow">
+                {{session('errorMessage')}}
+            </div>
+        @endif
             <div class="col-12 text-center italymap">
             </div>
         </div>
