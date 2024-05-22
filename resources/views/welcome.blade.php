@@ -7,6 +7,11 @@
                 {{session('errorMessage')}}
             </div>
         @endif
+        @if (session()->has('message'))
+        <div class="alert-success alert text-center w-50 rounded shadow">
+            {{session('message')}}
+        </div>
+    @endif
             <div class="col-12 text-center italymap">
             </div>
         </div>
