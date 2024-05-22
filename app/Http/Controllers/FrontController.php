@@ -19,16 +19,16 @@ class FrontController extends Controller
 
     // Prodotti show è la nostra index
     public function prodottiShow(Article $article){
-        $articles = Article::where('is_accepted' , true)->orderBy('created_at','desc')->get();
+        $articles = Article::where('is_accepted' , true)->orderBy('created_at','desc')->paginate(9);
         return view('prodottiShow', compact('articles'));
     }
     public function categoryDet(Article $article){
         return view('categoryDet' , compact('article'));
     }
 
-    public function searchArticle(Request $request){
+    public function searchArticles(Request $request){
         $query = $request->input('query');
-        $articles = Article::search($query)->where('is_accepted', true)->get();
+        $articles = Article::search($query)->where('is_accepted', true)->paginate(6);
         return view('article.searched', ['articles' => $articles, 'query' => $query]);
     }
 }

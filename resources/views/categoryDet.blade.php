@@ -13,7 +13,7 @@
                 <h4>Provenienza : {{$article->provenienza}}</h4>
                 <p>Descrizione : {{$article->descrizione}}</p>
                 <p class="bold">Venditore : {{$article->user->name}}</p>
-                <a href="" class="btn btn-success shadow my-5"> Categoria: {{$article->category->categoria}}</a>
+                <a href="{{ route('categoryShow',$article->category) }}" class="btn btn-success shadow my-5"> Categoria: {{$article->category->categoria}}</a>
             </div>
             <div class="col-6">
                 <div id="carouselExample" class="carousel slide">

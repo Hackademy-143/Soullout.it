@@ -18,7 +18,7 @@
                         <p class="card-text">{{$article->descrizione}}</p>
                         <p class="card-text">{{$article->prezzo}}</p>
                         <a href="{{route('categoryDet', $article)}}" class="btn btn-success shadow">Visualizza Dettaglio</a>
-                        <a href="" class="btn btn-success shadow my-5"> Categoria: {{$article->category->categoria}}</a>
+                        <a href="{{ route('categoryShow',$article->category) }}" class="btn btn-success shadow my-5"> Categoria: {{$article->category->categoria}}</a>
                         <p class="">Pubblicato il: {{$article->created_at->format('d/m/Y')}}</p>
                     </div>
                 </div>

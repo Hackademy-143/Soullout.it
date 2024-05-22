@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="row">
-            @forelse ($aticles as $article)
+            @forelse ($articles as $article)
                 <div class="col-12 col-md-3">
                     <div class="card shadow">
                         <img class="card-img-top" src="https://picsum.photos/200" alt="foto dell'articolo">
@@ -31,7 +31,7 @@
     </div>
     <div class="d-flex justify-content-center">
         <div>
-            {{ $article->links() }}
+            {{ $articles->links() }}
         </div>
     </div>
 </x-layout>

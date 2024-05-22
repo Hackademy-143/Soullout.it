@@ -40,7 +40,6 @@
                             aria-expanded="false">
                             Ciao , {{ Auth::user()->name }}
                         </a>
-
                         <ul class="dropdown-menu">
                             <li>
                                 <a class="dropdown-item" href="{{ route('article.create') }}">Inserisci il tuo prodotto</a>
@@ -75,13 +74,14 @@
                         @endif
                     @endauth
                 @endguest
-                <form class="d-flex me-auto" role="search" action="{{ route('article.search') }}" metheod="GET">
-                    <div class="input-group">
-                        <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success input-group-text" type="submit" id="basic-addon2">Search</button>
-                    </div>
-                </form>
             </ul>
+            <form class="d-flex" role="search" action="{{ route('article.search') }}" metheod="GET">
+                <div class="input-group">
+                    <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success input-group-text" type="submit"
+                        id="basic-addon2">Search</button>
+                </div>
+            </form>
         </div>
     </div>
 </nav>
