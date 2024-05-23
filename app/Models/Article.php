@@ -7,7 +7,8 @@ use App\Models\Category;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Image;
 
 class Article extends Model
 {
@@ -45,5 +46,9 @@ class Article extends Model
             'categoria'=>$this->category,
             'prezzo'=>$this->prezzo
         ];
+    }
+
+    public function images(): HasMany{
+        return $this->hasMany(Image::class);
     }
 }

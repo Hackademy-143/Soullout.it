@@ -5,9 +5,15 @@ namespace App\Livewire;
 use App\Models\Article;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
+use Livewire\WithFileUploads;
 
 class CreateArticoli extends Component
 {
+    use WithFileUploads;
+    public $images=[];
+    public $temporary_images;
+
+    
     #[Validate('required|min:5')]
     public $nome;
     #[Validate('required|min:3')]
@@ -48,4 +54,19 @@ class CreateArticoli extends Component
     {
         return view('livewire.create-articoli');
     }
+
+    public function updatedTemporaryImages(){
+        if ($this->validate([
+
+          'temporary_images.*' => 'image|max:1024', 
+          'temporary_images' => 'max:6',
+
+        ])) {
+            foreach ($this->temporary_images as $image) {
+                $this->images[] = $image;
+            }
+        }
+    }
+
+ 
 }
