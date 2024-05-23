@@ -79,8 +79,11 @@
             <div class="input-group">
                 <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success input-group-text" type="submit"
-                    id="basic-addon2">Search</button>
+                    id="basic-addon2">Cerca</button>
             </div>
         </form>
+        <x-_locale lang="it"/>
+        <x-_locale lang="en"/>
+        <x-_locale lang="es"/>
     </div>
 </nav>
