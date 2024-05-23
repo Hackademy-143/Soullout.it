@@ -15,6 +15,8 @@ Route::get('/dettaglio/{article}' , [FrontController::class, 'categoryDet'])->na
 Route::get('/revisor/index',[RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
 Route::get('/search/article', [FrontController::class, 'searchArticles'])->name('article.search');
 
+Route::post('/lingua/{lang}',[FrontController::class, 'setLanguage'])->name('setlLocale');
+
 Route::middleware(['auth'])->group(function(){
 Route::get('/article/create', [ArticleController::class , 'create_article'])->name('article.create');
 Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
