@@ -13,7 +13,7 @@ class CreateArticoli extends Component
     public $images=[];
     public $temporary_images;
 
-    
+
     #[Validate('required|min:5')]
     public $nome;
     #[Validate('required|min:3')]
@@ -37,7 +37,7 @@ class CreateArticoli extends Component
     }
     public function create_article(){
         $this->validate();
-        Article::create(
+        $this->article = Article::create(
             [
                 'nome'=> $this->nome,
                 'provenienza'=> $this->provenienza,
@@ -45,28 +45,39 @@ class CreateArticoli extends Component
                 'prezzo'=> $this->prezzo,
                 'user_id'=> auth()->id(),
                 'category_id'=> $this->category_id,
-            ]
-        );
-        $this->reset();
-        session()->flash('status', 'Articolo Creato');
-    }
-    public function render()
-    {
-        return view('livewire.create-articoli');
-    }
+                ]
+            );
 
-    public function updatedTemporaryImages(){
-        if ($this->validate([
+            if (count($this->images) > 0){
+                foreach ($this->images as $image) {
+                    $this->article->images()->create([
+                        'path' => $image->store('images', 'public'),
+                    ]);
+                }
+            }
+            $this->reset();
+            session()->flash('status', 'Articolo Creato');
+        }
+        public function render()
+        {
+            return view('livewire.create-articoli');
+        }
 
-          'temporary_images.*' => 'image|max:1024', 
-          'temporary_images' => 'max:6',
+        public function updatedTemporaryImages(){
+            if ($this->validate([
 
-        ])) {
-            foreach ($this->temporary_images as $image) {
-                $this->images[] = $image;
+                'temporary_images.*' => 'image|max:1024',
+                'temporary_images' => 'max:6',
+
+                ])) {
+                    foreach ($this->temporary_images as $image) {
+                        $this->images[] = $image;
+                    }
+                }
+            }
+            public function removeImage($key){
+                if (in_array($key, array_keys($this->images))) {
+                    unset($this->images[$key]);
+                }
             }
         }
-    }
-
- 
-}
