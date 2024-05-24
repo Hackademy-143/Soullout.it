@@ -1,8 +1,7 @@
 <x-layout>
-    <div class="container mt-5">
+    <div class="container-fluid bgpers mt-5">
         <div class="row justify-content-center">
-            <h1 class="display-1 fw-bold text-center p-5">SoullOut</h1>
-            <h3> {{ __('ui.hello') }} </h3>
+            <h1 class="display-3 fw-bold text-center pt-5">SoullOut</h1>
             @if (session()->has('errorMessage'))
             <div class="alert-danger alert text-center w-50 rounded shadow">
                 {{session('errorMessage')}}
@@ -18,12 +17,12 @@
         </div>
     </div>
     <div class="container">
-        <h2 class="text-center mt-3 mb-3 p-3">I prodotti più recenti</h2>
+        <h2 class="text-center mt-3 mb-3 p-3">{{ __('ui.home1') }} </h2>
         <div class="row justify-content-center p-2">
             @foreach ($articles as $article)
-            <div class="col-12 col-md-4 my-4">
+            <div class="col-12 col-md-3 my34">
                 <div class="card shadow">
-                    <img class="card-img-top" src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
+                    <img class="card-img-top card-imgpers " src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
                     <div class="card-body">
                         <h5 class="card-title">{{$article->nome}}</h5>
                         <p class="card-text">{{$article->provenienza}}</p>

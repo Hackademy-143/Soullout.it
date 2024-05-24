@@ -1,11 +1,11 @@
 <x-layout>
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-4">
+            <div class="col-12">
                 <h1 class="display-5 text-center p-5">Revisor dashboard</h1>
                 @if (session()->has('message'))
-                <div class="row justify_content_center">
-                    <div class="col-5 alert alert-success text-center shadow rounded">
+                <div class="row justify-content-center">
+                    <div class="col-12 alert alert-success text-center shadow rounded">
                         {{session('message')}}
                     </div>
                 </div>
@@ -15,26 +15,23 @@
     </div>
     @if($article_to_check)
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             @if ($article_to_check->images->count())
             @foreach ($article_to_check->images as $key => $image)
-            <div class="col-6 col-md-4 mb-4">
+            <div class="col-6 col-md-4 mb-3">
                 <img src="{{Storage::url($image->path) }}" class="img-fluid rounded shadow" alt="Immagine {{$key +1}} dell'articolo ' {{$article_to_check->nome}} ">
             </div>
             @endforeach
             @else
-            @for ($i=0; $i<6; $i++)
-            <img src="https://picsum.photos/200" class="img-fluid rounded shadow" alt="immagine segnaposto">
+            @for ($i=0; $i<3; $i++)
+            <img src="https://picsum.photos/200" class="img-fluid rounded shadow imgindex " alt="immagine segnaposto">
             @endfor
             @endif
         </div>
     </div>
     <div class="container">
-        <div class="row ">
-            <div class="col-6 col-md-4 mb-4 text-center">
-
-            </div>
-            <div class="col-6  d-flex flex-column text-center justify-content-center">
+        <div class="row justify-content-center mt-3 ">
+            <div class="col-6 d-flex flex-column text-center justify-content-center">
                 <div>
                     <h1>{{$article_to_check->nome}}</h1>
                     <h3>Venditore: {{$article_to_check->user->name}}</h3>

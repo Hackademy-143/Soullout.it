@@ -12,8 +12,8 @@
                 <div class="row">
                     @forelse ($category->articles as $article)
                     <div class="col-12 col-md-4 my-2">
-                        <div class="card-shadow" style="width: 18rem;">
-                            <img class="card-img-top" src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
+                        <div class="card-shadow card1">
+                            <img class="card-img-top card-imgpers " src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
                             <div class="card-body">
                                 <h5 class="card-title">{{$article->nome}}</h5>
                                 <p class="card-text">{{$article->provenienza}}</p>

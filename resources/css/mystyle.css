@@ -13,26 +13,51 @@
     --greenSuperLight:#e9f5db;
     --redCustom:#bc4749;
 }
-
+.inputpers{
+    border: 1px solid var(--darkGreenCustom) ;
+    border-radius: 4px;
+}
+.form-control:focus {
+    border-color: var(--darkGreenCustom);
+    -webkit-box-shadow:var(--darkGreenCustom) ;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
 .card{
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    height: 600px;
+    width: 350px;
 }
+.card1{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    height: 400px;
+    width: 350px;
+}
+.card-imgpers{
+    height: 200px ;
+    width: 350px;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+}
+.imgindex{
+    height: 200px ;
+    width: 350px;
+}
+
 h1{
-    /* margin-top: 40px; */
-    /* font-size: 80px; */
-    /* height: 100vh; */
     text-shadow:4px 4px 7px rgba(142, 48, 48, 0.65);
-    /* backdrop-filter: blur(3px); */
 }
 .italymap{
-    height: 90vh;
+    height: 70vh;
     width: 50vw;
     background-image: url(/public/img/Italymap1.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.bgpers{
+    background-image: url(/public/img/bgset.png);
+    background-size: contain;
+}
 
 
 /* Stile Navbar */

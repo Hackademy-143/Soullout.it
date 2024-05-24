@@ -30,7 +30,10 @@ class CreateArticoli extends Component
         'provenienza.min' => 'Inserire una città valida',
         'descrizione.min' => 'Inserire una descrizione del prodotto',
         'prezzo.min' => 'Inserire il prezzo del prodotto',
-        'category' => 'La categoria è richiesta',
+
+        'temporary_images.*.max' => 'Il peso massimo deve essere 1MB',
+        'temporary_images.max' => 'Il massimo numero di immagini consentito è 6'
+
     ];
     public function updated($propertyName){
         $this->validateOnly($propertyName);

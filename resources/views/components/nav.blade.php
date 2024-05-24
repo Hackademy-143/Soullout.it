@@ -1,22 +1,22 @@
-<nav class="navbar p-3 navbar-expand-lg fixed-top w-75 mx-auto">
+<nav class="navbar navbar-expand-lg fixed-top w-75 mx-auto">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Soullout</a>
+        <a class="navbar-brand" href="{{ route('welcome')}}">Soullout <i class="fa-solid fa-house"></i> </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">Home</a>
-                </li>
+                {{-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}"> Home </a>
+                </li> --}}
                 <li>
-                    <a class="nav-link active" aria-current="page" href="{{ route('prodottiShow') }}">Prodotti</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('prodottiShow') }}">{{ __('ui.nav1') }} </a>
                 </li>
                 {{-- categorie --}}
                 <li class=" nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="categoriesDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
+                        data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.nav2') }} </a>
                     <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
                         @foreach ($categories as $category)
                             <li><a href="{{ route('categoryShow', compact('category')) }}"
@@ -29,10 +29,10 @@
                 </li>
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Accedi</a>
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('ui.login') }} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">Registrati</a>
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('ui.register') }}</a>
                     </li>
                 @else
                     <li class="nav-item dropdown">
@@ -77,9 +77,9 @@
         </div>
         <form class="d-flex" role="search" action="{{ route('article.search') }}" metheod="GET">
             <div class="input-group">
-                <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control inputpers" name="query" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success input-group-text" type="submit"
-                    id="basic-addon2">Cerca</button>
+                    id="basic-addon2"><i class="fas fa-search"></i></button>
             </div>
         </form>
         <x-_locale lang="it"/>

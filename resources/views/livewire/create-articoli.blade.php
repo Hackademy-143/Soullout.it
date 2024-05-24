@@ -1,12 +1,12 @@
-<div class="container-fluid">
-    <div class="row justify-content-center mt-5">
-        <div class="col-10">
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+        <div class="col-8">
             @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
             </div>
             @endif
-            <h1 class="p-3 display-4">Inserisci il tuo prodotto</h1>
+            <h1 class="p-3 display-4 p-5">Inserisci il prodotto</h1>
             <div class="mb-3">
                 <input type="file" wire:model.live="temporary_images" multiple class="form-control shadow @error('temporary_images.*') is-invalid @enderror" placeholder="Img/">
                 @error('temporary_images.*')
@@ -33,7 +33,7 @@
             </div>
             @endif
             <form wire:submit.prevent="create_article">
-                <div class="mb-3">
+                <div class="mb-3 ">
                     <label class="form-label">Nome</label>
                     <input type="text" class="form-control"  wire:model.blur="nome">
                     @error('nome')
