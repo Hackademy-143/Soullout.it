@@ -20,7 +20,7 @@
         <h2 class="text-center mt-3 mb-3 p-3">{{ __('ui.home1') }} </h2>
         <div class="row justify-content-center p-2">
             @foreach ($articles as $article)
-            <div class="col-12 col-md-3 my34">
+            <div class="col-12 col-md-3 mx-4">
                 <div class="card shadow">
                     <img class="card-img-top card-imgpers " src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
                     <div class="card-body">
@@ -37,6 +37,4 @@
             @endforeach
         </div>
     </div>
-
-
 </x-layout>

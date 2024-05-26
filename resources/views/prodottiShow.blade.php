@@ -7,10 +7,10 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             @foreach ($articles as $article)
-            <div class="col-12 col-md-4 my-4">
-                <div class="card shadow">
+            <div class="col-4 my-3">
+                <div class="card shadow ">
                     <img class="card-img-top card-imgpers " src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
                     <div class="card-body">
                         <h5 class="card-title">{{$article->nome}}</h5>

@@ -19,7 +19,7 @@
                                 <p class="card-text">{{$article->provenienza}}</p>
                                 <p class="card-text">{{$article->descrizione}}</p>
                                 <p class="card-text">{{$article->price}}</p>
-                                <a href="{{route('categoryDet', $article)}}" class="btn">Visualizza</a>
+                                <a href="{{route('categoryDet', $article)}}" class="btn btn-success ">Visualizza</a>
                                 <p class="my-2"> Pubblicato il: {{$article->created_at->format('d/m/Y')}}
                                     <br> Venditore : {{$article->user->name ?? ' ' }} </p>
                                 </div>
