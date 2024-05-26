@@ -13,19 +13,19 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">{{ __('ui.username') }}</label>
-                        <input type="text" class="form-control" name="name">
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('ui.mail') }}</label>
-                        <input type="email" class="form-control" name="email">
+                        <input type="email" class="form-control @error('email') is-invalid @enderror " name="email">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('ui.password') }}</label>
-                        <input type="password" class="form-control" name="password">
+                        <input type="password" class="form-control @error('password') is-invalid @enderror " name="password">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('ui.confirmPassword') }}</label>
-                        <input type="password" class="form-control" name="password_confirmation">
+                        <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror " name="password_confirmation">
                     </div>
                     <button type="submit" class="btn btn-success">{{ __('ui.submit') }}</button>
                 </form>

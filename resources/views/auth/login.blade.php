@@ -13,11 +13,17 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">{{ __('ui.mail') }}</label>
-                        <input type="email" class="form-control" name="email">
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email">
+                        @error('email')
+                        <div class="text-danger">{{$message}}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('ui.password') }}</label>
-                        <input type="password" class="form-control" name="password">
+                        <input type="password" class="form-control @error('password') is-invalid @enderror " name="password">
+                        @error('password')
+                        <div class="text-danger">{{$message}}</div>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-success">{{ __('ui.submit') }}</button>
                 </form>

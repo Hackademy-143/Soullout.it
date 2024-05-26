@@ -13,8 +13,8 @@
                     @forelse ($category->articles as $article)
                     <div class="col-12 col-md-4 my-2">
                         <div class="card-shadow card1">
-                            <img class="card-img-top card-imgpers " src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
                             <div class="card-body">
+                                <img class="card-img-top card-imgpers" src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
                                 <h5 class="card-title">{{$article->nome}}</h5>
                                 <p class="card-text">{{$article->provenienza}}</p>
                                 <p class="card-text">{{$article->descrizione}}</p>
