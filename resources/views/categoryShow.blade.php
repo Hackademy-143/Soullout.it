@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="display-1 p-3" >Esplora la categoria #{{$category->categoria}}</h1>
+                <h1 class="display-1 p-3" >{{ __('ui.esplora') }} #{{$category->categoria}}</h1>
             </div>
         </div>
     </div>
@@ -19,17 +19,17 @@
                                 <p class="card-text">{{$article->provenienza}}</p>
                                 <p class="card-text">{{$article->descrizione}}</p>
                                 <p class="card-text">{{$article->price}}</p>
-                                <a href="{{route('categoryDet', $article)}}" class="btn btn-success ">Visualizza</a>
-                                <p class="my-2"> Pubblicato il: {{$article->created_at->format('d/m/Y')}}
-                                    <br> Venditore : {{$article->user->name ?? ' ' }} </p>
+                                <a href="{{route('categoryDet', $article)}}" class="btn btn-success ">{{ __('ui.details') }}</a>
+                                <p class="my-2"> {{ __('ui.published') }} : {{$article->created_at->format('d/m/Y')}}
+                                    <br> {{ __('ui.vendor') }} : {{$article->user->name ?? ' ' }} </p>
                                 </div>
                             </div>
                         </div>
                         @empty
                         <div class="col-12">
-                            <p > Non sono presenti annunci per questa categoria! </p>
-                            <p > Pubblicane uno: <a href="{{ route('article.create') }}
-                                " class="btn btn-success">Nuovo annuncio</a></p>
+                            <p > {{ __('ui.annunci') }} </p>
+                            <p > {{ __('ui.publish') }}: <a href="{{ route('article.create') }}
+                                " class="btn btn-success">{{ __('ui.new') }}</a></p>
                         </div>
                         @endforelse
                     </div>

@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h1 class="display-5 text-center p-5">Revisor dashboard</h1>
+                <h1 class="display-5 text-center p-5">{{ __('ui.dashboard') }}</h1>
                 @if (session()->has('message'))
                 <div class="row justify-content-center">
                     <div class="col-12 alert alert-success text-center shadow rounded">
@@ -59,8 +59,8 @@
 @else
 <div class="row justify_content_center align-items-center height-custom text-center">
     <div class="col-12">
-        <h1 class="fst-italic display-4">Nessun articolo da revisionare</h1>
-        <a href="{{route('welcome')}}" class="mt-5 btn btn-success">Torna alla Home</a>
+        <h1 class="fst-italic display-4">{{ __('ui.negative1') }}</h1>
+        <a href="{{route('welcome')}}" class="mt-5 btn btn-success">{{ __('ui.home') }}</a>
     </div>
 </div>
 @endif

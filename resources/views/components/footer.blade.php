@@ -66,15 +66,22 @@
   </div>
   <!-- Grid container -->
 {{-- Revisore --}}
+
+@auth
+@if (Auth::user()->is_revisor)
+<div class="container text-center text-success"> {{ __('ui.complimenti') }}</div>
+@else
   <div class=" mb-3 text-center">
       <h5>Vuoi diventare revisore?</h5>
       <p>Cliccando il bottone farai richiesta al nostro admin</p>
       <a href="{{route('become.revisor')}}" class="btn btn-success">Diventa Revisore</a>
 </div>
+@endif
+@endauth
+
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2024 Copyright: Facciamo Siti con Problemi
-    <a class="text-body" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Ma stiamo migliorando</a>
+    © 2024 Copyright: Sollout
   </div>
   <!-- Copyright -->
 </footer>

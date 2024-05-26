@@ -42,13 +42,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="{{ route('article.create') }}">Inserisci il tuo prodotto</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="">Items</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="">Feedback</a>
+                                <a class="dropdown-item" href="{{ route('article.create') }}">{{ __('ui.insertProduct') }}</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -56,7 +50,7 @@
                             <li>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">Logout</a>
+                            document.getElementById('logout-form').submit();">{{ __('ui.logout') }}</a>
                             </li>
                             <form action="{{ route('logout') }}" method="POST" id="logout-form" class="d-none">
                                 @csrf
@@ -67,8 +61,7 @@
                         @if (Auth::user()->is_revisor)
                             <li class="nav-item">
                                 <a class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25"
-                                    href="{{ route('revisor.index') }}">Zona Revisore <span
-                                    class="position-absolute right-100 translate-middle-end badge rounded-pill bg-danger">{{ \App\Models\Article::toBeRevisedCount()}}</span></a>
+                                    href="{{ route('revisor.index') }}">{{ __('ui.revisor') }}<span class="position-absolute right-100 translate-middle-end badge rounded-pill bg-danger">{{ \App\Models\Article::toBeRevisedCount()}}</span></a>
                             </li>
                         @endif
                     @endauth
@@ -77,7 +70,7 @@
         </div>
         <form class="d-flex" role="search" action="{{ route('article.search') }}" metheod="GET">
             <div class="input-group">
-                <input class="form-control inputpers" name="query" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control inputpers" name="query" type="search" placeholder="{{ __('ui.search') }}" aria-label="Search">
                 <button class="btn btn-outline-success input-group-text" type="submit"
                     id="basic-addon2"><i class="fas fa-search"></i></button>
             </div>

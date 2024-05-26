@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <div class="row justify-content-center align-content-center">
             <div class="col-12">
-                <h1 class="p-5">Risualtai per la ricerca "<span class="fdt-italic">{{$query}}</span>"
+                <h1 class="p-5">{{ __('ui.ricerca') }}"<span class="fdt-italic">{{$query}}</span>"
                 </h1>
             </div>
         </div>
@@ -15,15 +15,15 @@
                             <h5 class="card-title">{{$article->nome}}</h5>
                             <p class="card-text">{{$article->provenienza}}</p>
                             <p class="card-text">{{$article->prezzo}}</p>
-                            <a href="{{route('categoryDet', $article)}}" class="btn btn-success shadow">Visualizza Dettaglio</a>
-                            <p class="">Pubblicato il: {{$article->created_at->format('d/m/Y')}}</p>
+                            <a href="{{route('categoryDet', $article)}}" class="btn btn-success shadow">{{ __('ui.details') }}</a>
+                            <p class="">{{ __('ui.published') }} : {{$article->created_at->format('d/m/Y')}}</p>
                         </div>
                     </div>
                 </div>
             @empty
                 <div class="col-12">
                     <h3 class="text-center">
-                        Nessun articolo corrispondente alla ricerca effettuata
+                        {{ __('ui.negative') }}
                     </h3>
                 </div>
             @endforelse

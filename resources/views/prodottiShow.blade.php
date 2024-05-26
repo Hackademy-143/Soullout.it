@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-12 mt-1 text-center">
-                <h1 class="display-1  p-3">Prodotti</h1>
+                <h1 class="display-1  p-3">{{ __('ui.prodotti') }}</h1>
             </div>
         </div>
     </div>
@@ -17,9 +17,9 @@
                         <p class="card-text">{{$article->provenienza}}</p>
                         <p class="card-text">{{$article->descrizione}}</p>
                         <p class="card-text">{{$article->prezzo}}</p>
-                        <a href="{{route('categoryDet', $article)}}" class="btn btn-success shadow">Visualizza Dettaglio</a>
-                        <a href="{{ route('categoryShow',$article->category) }}" class="btn btn-success shadow my-5"> Categoria: {{$article->category->categoria}}</a>
-                        <p>Pubblicato il: {{$article->created_at->format('d/m/Y')}}</p>
+                        <a href="{{route('categoryDet', $article)}}" class="btn btn-success shadow">{{ __('ui.details') }}</a>
+                        <a href="{{ route('categoryShow',$article->category) }}" class="btn btn-success shadow my-5"> {{$article->category->categoria}}</a>
+                        <p>{{ __('ui.published') }}: {{$article->created_at->format('d/m/Y')}}</p>
                     </div>
                 </div>
             </div>

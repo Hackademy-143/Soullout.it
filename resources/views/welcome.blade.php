@@ -28,9 +28,9 @@
                         <p class="card-text">{{$article->provenienza}}</p>
                         <p class="card-text">{{$article->descrizione}}</p>
                         <p class="card-text">€ {{$article->prezzo}}</p>
-                        <a href="{{route('categoryDet', $article)}}" class="btn btn-success shadow">Visualizza Dettaglio</a>
-                        <a href="{{ route('categoryShow',$article->category) }}" class="btn btn-success shadow my-4"> Categoria: {{$article->category->categoria}}</a>
-                        <p class="">Pubblicato il: {{$article->created_at->format('d/m/Y')}}</p>
+                        <a href="{{route('categoryDet', $article)}}" class="btn btn-success shadow"> {{ __('ui.details') }}</a>
+                        <a href="{{ route('categoryShow',$article->category) }}" class="btn btn-success shadow my-4"> {{$article->category->categoria}}</a>
+                        <p class="">{{ __('ui.published') }}: {{$article->created_at->format('d/m/Y')}}</p>
                     </div>
                 </div>
             </div>
