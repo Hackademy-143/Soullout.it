@@ -63,8 +63,8 @@ class CreateArticoli extends Component
                 }
                 File::deleteDirectory(storage_path('/app/livewire-tmp'));
             }
-            session()->flash('status', 'Articolo Creato');
-            $this->cleanForm();
+          session()->flash('success', 'Articolo creato correttamente');
+          $this->reset();
         }
         public function render()
         {
