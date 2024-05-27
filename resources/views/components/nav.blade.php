@@ -73,6 +73,7 @@
                 <input class="form-control inputpers" name="query" type="search" placeholder="{{ __('ui.search') }}" aria-label="Search">
                 <button class="btn btn-outline-success input-group-text" type="submit"
                     id="basic-addon2"><i class="fas fa-search"></i></button>
+                    
             </div>
         </form>
         <x-_locale lang="it"/>
