@@ -36,5 +36,7 @@ return[
     'negative' => 'Nessun articolo corrispondente alla ricerca effettuata',
     'dashboard' => 'Pannello di controllo revisore',
     'negative1' => 'Nessun articolo da revisionare',
+    'accetta' => 'Accetta',
+    'rifiuta' => 'Rifiutare',
 
 ];

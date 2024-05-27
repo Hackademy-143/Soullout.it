@@ -36,4 +36,7 @@ return[
     'negative' => 'No results matching your search',
     'dashboard' => 'Dashboard of the revisor',
     'negative1' => 'No items to review',
+    'accetta' => 'Accept',
+    'rifiuta' => 'Reject',
+    
 ];

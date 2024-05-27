@@ -36,6 +36,7 @@ return[
     'negative' => 'No hay artículos que coincidan con su búsqueda',
     'dashboard' => 'Dashboard revisor',
     'negative1' => 'No hay elementos para revisar',
-
-
+    'accetta' => 'Aceptar',
+    'rifiuta' => 'Rechazar',
+    
 ];
