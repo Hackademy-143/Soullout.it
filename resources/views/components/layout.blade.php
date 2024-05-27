@@ -12,12 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 </head>
-<body>
+  <body>
     <x-nav/>
     <div class="min-vh-100">
     {{$slot}}
     </div>
     <x-footer/>
 
-</body>
+  </body>
 </html>
