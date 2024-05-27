@@ -20,7 +20,7 @@ class CreateArticoli extends Component
     public $nome;
     #[Validate('required|min:3')]
     public $provenienza;
-    #[Validate('required|min:10|max:50')]
+    #[Validate('required|min:10|max:255')]
     public $descrizione;
     #[Validate('required|min:1')]
     public $prezzo;
