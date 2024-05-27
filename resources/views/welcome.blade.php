@@ -22,7 +22,7 @@
             @foreach ($articles as $article)
             <div class="col-12 col-md-3 mx-4">
                 <div class="card shadow">
-                    <img class="card-img-top card-imgpers " src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
+                    <img class="card-img-top card-imgpers " src="{{$article->images->isNotEmpty() ? $article->images->first()->getUrl(300, 300) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
                     <div class="card-body">
                         <h5 class="card-title">{{$article->nome}}</h5>
                         <p class="card-text">{{$article->provenienza}}</p>
