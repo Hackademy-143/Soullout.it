@@ -3,12 +3,12 @@
         <div class="row justify-content-center">
             <h1 class="display-3 fw-bold text-center pt-5">SoullOut</h1>
             @if (session()->has('errorMessage'))
-            <div class="alert-danger alert text-center w-50 rounded shadow">
+            <div class="alert-danger alert text-center rounded shadow">
                 {{session('errorMessage')}}
             </div>
         @endif
         @if (session()->has('message'))
-        <div class="alert-success alert text-center w-50 rounded shadow">
+        <div class="alert-success alert text-center rounded shadow">
             {{session('message')}}
         </div>
     @endif

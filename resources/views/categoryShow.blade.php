@@ -21,19 +21,19 @@
                                 <p class="card-text">{{$article->price}}</p>
                                 <a href="{{route('categoryDet', $article)}}" class="btn btn-success ">{{ __('ui.details') }}</a>
                                 <p class="my-2"> {{ __('ui.published') }} : {{$article->created_at->format('d/m/Y')}}
-                                    <br> {{ __('ui.vendor') }} : {{$article->user->name ?? ' ' }} </p>
-                                </div>
+                                <br> {{ __('ui.vendor') }} : {{$article->user->name ?? ' ' }} </p>
                             </div>
                         </div>
-                        @empty
-                        <div class="col-12">
-                            <p > {{ __('ui.annunci') }} </p>
-                            <p > {{ __('ui.publish') }}: <a href="{{ route('article.create') }}
-                                " class="btn btn-success">{{ __('ui.new') }}</a></p>
-                        </div>
-                        @endforelse
                     </div>
+                    @empty
+                    <div class="col-12">
+                        <p > {{ __('ui.annunci') }} </p>
+                        <p > {{ __('ui.publish') }}: <a href="{{ route('article.create') }}
+                            " class="btn btn-success">{{ __('ui.new') }}</a></p>
+                    </div>
+                    @endforelse
                 </div>
             </div>
         </div>
-    </x-layout>
+    </div>
+</x-layout>
