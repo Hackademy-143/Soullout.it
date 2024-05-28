@@ -116,6 +116,10 @@ h1{
 .fapers1{
     background-color: white;
 }
+input{
+
+caret-color: var(--greenLightCustom);
+}
 
 .souloutimg{
     background-image: url(/public/storage/img/Sullout_2.png);
