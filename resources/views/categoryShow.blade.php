@@ -14,7 +14,7 @@
                     <div class="col-12 col-md-4 my-2">
                         <div class="card-shadow card1">
                             <div class="card-body ">
-                                <img class="card-img-top card-imgpers" src="{{$article->images->isNotEmpty() ? $article->images->first()->getUrl(300, 300) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
+                                <img class="card-img-top card-imgpers" src="{{$article->images->isNotEmpty() ? $article->images->first()->getUrl(600, 600) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
                                 <h5 class="card-title">{{$article->nome}}</h5>
                                 <p class="card-text">{{$article->provenienza}}</p>
                                 <p class="card-text">{{$article->descrizione}}</p>

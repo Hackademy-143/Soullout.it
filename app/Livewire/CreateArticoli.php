@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearch;
 use App\Models\Article;
 use Livewire\Component;
 use App\Jobs\ResizeImage;
@@ -12,7 +14,7 @@ use Illuminate\Support\Facades\File;
 class CreateArticoli extends Component
 {
     use WithFileUploads;
-    public $images=[];
+    public $images = [];
     public $temporary_images;
 
 
@@ -37,55 +39,63 @@ class CreateArticoli extends Component
         'temporary_images.max' => 'Il massimo numero di immagini consentito è 6'
 
     ];
-    public function updated($propertyName){
+    public function updated($propertyName)
+    {
         $this->validateOnly($propertyName);
     }
-    public function create_article(){
+    public function create_article()
+    {
         $this->validate();
         $this->article = Article::create(
             [
-                'nome'=> $this->nome,
-                'provenienza'=> $this->provenienza,
-                'descrizione'=> $this->descrizione,
-                'prezzo'=> $this->prezzo,
-                'user_id'=> auth()->id(),
-                'category_id'=> $this->category_id,
-                ]
-            );
+                'nome' => $this->nome,
+                'provenienza' => $this->provenienza,
+                'descrizione' => $this->descrizione,
+                'prezzo' => $this->prezzo,
+                'user_id' => auth()->id(),
+                'category_id' => $this->category_id,
+            ]
+        );
 
-            if (count($this->images) > 0){
-                foreach ($this->images as $image) {
-                    $newFileName = "articles/{$this->article->id}";
-                    $newImage = $this->article->images()->create([
-                        'path' => $image->store($newFileName, 'public'),
-                    ]);
-                    dispatch(new ResizeImage($newImage->path, 300, 300));
-                }
-                File::deleteDirectory(storage_path('/app/livewire-tmp'));
+        if (count($this->images) > 0) {
+            foreach ($this->images as $image) {
+                $newFileName = "articles/{$this->article->id}";
+                $newImage = $this->article->images()->create([
+                    'path' => $image->store($newFileName, 'public'),
+                ]);
+                dispatch(new ResizeImage($newImage->path, 600, 600));
+                dispatch(new GoogleVisionSafeSearch($newImage->id));
+                dispatch(new GoogleVisionLabelImage($newImage->id));
             }
-          session()->flash('success', 'Articolo creato correttamente');
-          $this->reset();
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
-        public function render()
-        {
-            return view('livewire.create-articoli');
-        }
+        session()->flash('success', 'Articolo creato correttamente');
+        $this->reset();
+    }
+    public function render()
+    {
+        return view('livewire.create-articoli');
+    }
 
-        public function updatedTemporaryImages(){
-            if ($this->validate([
+    public function updatedTemporaryImages()
+    {
+        if (
+            $this->validate([
 
                 'temporary_images.*' => 'image|max:1024',
                 'temporary_images' => 'max:6',
 
-                ])) {
-                    foreach ($this->temporary_images as $image) {
-                        $this->images[] = $image;
-                    }
-                }
-            }
-            public function removeImage($key){
-                if (in_array($key, array_keys($this->images))) {
-                    unset($this->images[$key]);
-                }
+            ])
+        ) {
+            foreach ($this->temporary_images as $image) {
+                $this->images[] = $image;
             }
         }
+    }
+    public function removeImage($key)
+    {
+        if (in_array($key, array_keys($this->images))) {
+            unset($this->images[$key]);
+        }
+    }
+}
