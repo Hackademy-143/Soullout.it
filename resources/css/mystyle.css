@@ -97,3 +97,15 @@ h1{
     height: 120px;
     width: 120px;
 }
+
+.btn{
+    background-color: var(--greenCustom);
+}
+
+.btnflag{
+    background-color: var(--greenLightCustom);
+}
+
+.fapers{
+    background-color: var(--greenSuperLight);
+}

@@ -60,7 +60,7 @@
                     @auth
                         @if (Auth::user()->is_revisor)
                             <li class="nav-item">
-                                <a class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25"
+                                <a class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25 fapers"
                                     href="{{ route('revisor.index') }}">{{ __('ui.revisor') }}<span class="position-absolute right-100 translate-middle-end badge rounded-pill bg-danger">{{ \App\Models\Article::toBeRevisedCount()}}</span></a>
                             </li>
                         @endif
@@ -71,9 +71,9 @@
         <form class="d-flex" role="search" action="{{ route('article.search') }}" metheod="GET">
             <div class="input-group">
                 <input class="form-control inputpers" name="query" type="search" placeholder="{{ __('ui.search') }}" aria-label="Search">
-                <button class="btn btn-outline-success input-group-text" type="submit"
-                    id="basic-addon2"><i class="fas fa-search"></i></button>
-                    
+                <button class="btn btn-outline-success input-group-text fapers" type="submit" id="basic-addon2">
+                    <i class="fas fa-search"></i>
+                </button>    
             </div>
         </form>
         <x-_locale lang="it"/>
