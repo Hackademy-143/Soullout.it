@@ -6,8 +6,8 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row justify-content-center">
+    <div class="container ">
+        <div class="row  justify-content-center">
             @foreach ($articles as $article)
             <div class="col-4 my-3">
                 <div class=" shadow card1">
