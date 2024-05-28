@@ -25,26 +25,27 @@
 .card{
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     height: 600px;
-    width: 350px;
+    width: 380px;
 }
 .card1{
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    height: 400px;
-    width: 350px;
+    height: 600px;
+    width: 380px;
 }
 .card-imgpers{
     height: 200px ;
-    width: 350px;
+    width: 380px;
     border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%;
 }
 .imgindex{
     height: 200px ;
-    width: 350px;
+    width: 380px;
 }
 
 h1{
     text-shadow:4px 4px 7px rgba(142, 48, 48, 0.65);
+    color: var(--darkGreenCustom);
 }
 .italymap{
     height: 75vh;
@@ -108,4 +109,13 @@ h1{
 
 .fapers{
     background-color: var(--greenSuperLight);
+}
+.fapers1{
+    background-color: white;
+}
+
+.souloutimg{
+    background-image: url(/public/storage/img/Sullout_2.png);
+    background-position: center;
+    /* background-repeat: no-repeat; */
 }

@@ -16,14 +16,14 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container ">
         <h2 class="text-center mt-3 mb-3 p-3">{{ __('ui.home1') }} </h2>
-        <div class="row justify-content-center p-2">
+        <div class="row justify-content-between  p-2">
             @foreach ($articles as $article)
             <div class="col-12 col-md-3 mx-4">
                 <div class="card shadow">
                     <img class="card-img-top card-imgpers " src="{{$article->images->isNotEmpty() ?  $article->images->first()->getUrl(300, 300) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
-                    <div class="card-body">
+                    <div class="card-body p-1">
                         <h5 class="card-title">{{$article->nome}}</h5>
                         <p class="card-text">{{$article->provenienza}}</p>
                         <p class="card-text">{{$article->descrizione}}</p>

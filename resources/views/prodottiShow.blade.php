@@ -1,8 +1,8 @@
-<x-layout>
+<x-layout >
     <div class="container mt-5">
         <div class="row">
             <div class="col-12 mt-1 text-center">
-                <h1 class="display-1  p-3">{{ __('ui.prodotti') }}</h1>
+                <h1 class="display-1  p-4">{{ __('ui.prodotti') }}</h1>
             </div>
         </div>
     </div>
@@ -10,9 +10,9 @@
         <div class="row justify-content-center">
             @foreach ($articles as $article)
             <div class="col-4 my-3">
-                <div class="card shadow">
+                <div class=" shadow card1">
                     <img class="card-img-top card-imgpers " src="{{$article->images->isNotEmpty() ? $article->images->first()->getUrl(300, 300) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
-                    <div class="card-body">
+                    <div class="card-body p-1">
                         <h5 class="card-title">{{$article->nome}}</h5>
                         <p class="card-text">{{$article->provenienza}}</p>
                         <p class="card-text">{{$article->descrizione}}</p>

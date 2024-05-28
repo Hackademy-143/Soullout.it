@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-12">
+            <div class="col-12 bgpers">
                 <h1 class="display-5 text-center p-5">{{ __('ui.dashboard') }}</h1>
                 @if (session()->has('message'))
                 <div class="row justify-content-center">
@@ -14,8 +14,8 @@
         </div>
     </div>
     @if($article_to_check)
-    <div class="container">
-        <div class="row justify-content-center">
+    <div class="container ">
+        <div class="row bgpers justify-content-center">
             @if ($article_to_check->images->count())
             @foreach ($article_to_check->images as $key => $image)
             <div class="col-6 col-md-4 mb-3">
@@ -35,7 +35,7 @@
                 <div>
                     <h1>{{$article_to_check->nome}}</h1>
                     <h3>Venditore: {{$article_to_check->user->name}}</h3>
-                    <h4>{{$article_to_check->prezzo}}€</h4>
+                    <h4>{{$article_to_check->prezzo}} € </h4>
                     <h4 class="fst-italic text-muted">#{{$article_to_check->category->categoria}}</h4>
                     <p class="h6">{{$article_to_check->descrizione}}</p>
                 </div>

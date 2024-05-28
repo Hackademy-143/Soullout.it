@@ -1,19 +1,19 @@
 <x-layout>
-    <div class="container mt-5">
+    <div class="container mt-5 ">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="display-1 p-3" >{{ __('ui.esplora') }} #{{$category->categoria}}</h1>
+                <h1 class="display-1 p-4" >{{ __('ui.esplora') }} #{{$category->categoria}}</h1>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container bgpers ">
         <div class="row">
             <div class="col-12">
                 <div class="row">
                     @forelse ($category->articles as $article)
                     <div class="col-12 col-md-4 my-2">
                         <div class="card-shadow card1">
-                            <div class="card-body">
+                            <div class="card-body p-1">
                                 <img class="card-img-top card-imgpers" src="{{$article->images->isNotEmpty() ? $article->images->first()->getUrl(300, 300) : 'https://picsum.photos/200'}}" alt="foto dell'articolo {{$article->nome}}">
                                 <h5 class="card-title">{{$article->nome}}</h5>
                                 <p class="card-text">{{$article->provenienza}}</p>
