@@ -22,30 +22,32 @@
     -webkit-box-shadow:var(--darkGreenCustom) ;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
-.card{
+/* .card{
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    height: 600px;
+    height: 620px;
     width: 380px;
 }
-
-
 .card1{
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    height: 600px;
+    height: 620px;
     width: 380px;
 }
-
 .card-imgpers{
-    height: 200px ;
+    height: 250px ;
     width: 380px;
     border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%;
 }
 .imgindex{
-    height: 200px ;
-    width: 380px;
+    height: 180px ;
+    width: 350px;
+} */
+/* .card-body{
+    height: 750px;
+} */
+.card-img-top{
+    height: 280px;
 }
-
 h1{
     text-shadow:4px 4px 7px rgba(142, 48, 48, 0.65);
     color: var(--darkGreenCustom);
@@ -125,4 +127,13 @@ caret-color: var(--greenLightCustom);
     background-image: url(/public/storage/img/Sullout_2.png);
     background-position: center;
     /* background-repeat: no-repeat; */
+}
+
+@media(max-width:768px){
+    body{
+        margin: 80px;
+    }
+    #nontivogliovedere{
+        display: none;
+    }
 }

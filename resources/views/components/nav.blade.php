@@ -1,6 +1,5 @@
-<nav class="navbar navbar-expand-lg fixed-top w-75 mx-auto">
+<nav class="navbar navbar-expand-lg fixed-top w-75 rounded-bottom-4 mx-auto">
     <div class="container-fluid">
-
         <a class="navbar-brand" href="{{ route('welcome')}}"><img src="/storage/img/Sullout_2.png" height="55px" width="80px" alt="brand"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,8 +66,8 @@
             @endguest
         </ul>
     </div>
-    <form class="d-flex" role="search" action="{{ route('article.search') }}" metheod="GET">
-        <div class="input-group">
+    <form class="d-flex"  role="search" action="{{ route('article.search') }}" metheod="GET">
+        <div class="input-group" id="nontivogliovedere">
             <input class="form-control inputpers" name="query" type="search" placeholder="{{ __('ui.search') }}" aria-label="Search">
             <button class="btn btn-outline-success input-group-text fapers" type="submit" id="basic-addon2">
                 <i class="fas fa-search"></i>

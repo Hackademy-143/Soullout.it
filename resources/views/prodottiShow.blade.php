@@ -9,16 +9,18 @@
     <div class="container ">
         <div class="row  justify-content-center">
             @foreach ($articles as $article)
-                <div class="col-4 my-3">
+                <div class="col-12 col-md-4 my-3">
                     <div data-aos="flip-left">
-                        <div class=" shadow card1">
-                            <img class="card-img-top card-imgpers "
+                        <div class="card">
+                            <div class="card-body p-1">
+                                <img class="card-img-top"
                                 src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(600, 600) : 'https://picsum.photos/200' }}"
                                 alt="foto dell'articolo {{ $article->nome }}">
-                            <div class="card-body p-1">
                                 <h5 class="card-title">{{ $article->nome }}</h5>
                                 <p class="card-text">{{ $article->provenienza }}</p>
-                                <p class="card-text">{{ $article->descrizione }}</p>
+                                <p class="card-text"> {{ substr($article->descrizione, 0, 100) }}
+                                    @if (strlen($article->descrizione) >= 100) ... @endif
+                                    </p>
                                 <p class="card-text">{{ $article->prezzo }}</p>
                                 <a href="{{ route('categoryDet', $article) }}"
                                     class="btn btn-success shadow">{{ __('ui.details') }}</a>

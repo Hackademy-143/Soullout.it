@@ -45,4 +45,5 @@ return[
     'req2'=>"Inserisci la provenienza del prodotto",
     'req3'=>"Inserisci la descrizione del prodotto",
     'req4'=>"Inserisci il prezzo del prodotto",
+    'venditore' => 'Venditore',
 ];
