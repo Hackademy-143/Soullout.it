@@ -7,11 +7,11 @@ use Spatie\Image\Enums\Fit;
 use Illuminate\Bus\Queueable;
 use Spatie\Image\Enums\AlignPosition;
 use Illuminate\Queue\SerializesModels;
+use Spatie\Image\Image as SpatieImage;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Google\Cloud\Vision\V1\Client\ImageAnnotatorClient;
-use Spatie\Image\Image as SpatieImage;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
 class RemoveFaces implements ShouldQueue
 {
@@ -41,7 +41,7 @@ class RemoveFaces implements ShouldQueue
         $faces = $response->getFaceAnnotations();
 
         foreach ($faces as $face) {
-            $vertices = $face->getBoundingPoly()->getVerticles();
+            $vertices = $face->getBoundingPoly()->getVertices();
 
             $bounds = [];
 
@@ -55,7 +55,7 @@ class RemoveFaces implements ShouldQueue
             $image = SpatieImage::load($srcPath);
 
             $image->watermark(
-                base_path('storage/img/Sullout_2.png'),
+                base_path('resources/img/Sullout_2.png'),
                 AlignPosition::TopLeft,
                 paddingX: $bounds[0][0],
                 paddingY: $bounds[0][1],
