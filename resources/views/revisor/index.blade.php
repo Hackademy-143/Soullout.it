@@ -31,6 +31,74 @@
             @endif
         </div>
     </div>
+    <div class="col-md-5 ps-3">
+        <div class="card-body">
+            <h5 class="fw-bold">Labels</h5>
+            {{-- @dd($article_to_check->images) --}}
+            @foreach ($article_to_check->images as $image)
+            @if ($image->labels)
+            @foreach ($image->labels as $label)
+            #{{ $label }},
+            @endforeach
+            @else
+            <p class="fst-italic">No labels</p>
+            @endif
+        </div>
+    </div>
+    <div class="col-md-3 ps-3">
+        <div class="card-body">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne{{$loop->index}}" aria-expanded="false" aria-controls="flush-collapseOne{{$loop->index}}">
+                            Ratings
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne{{$loop->index}}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="row justify-content-center">
+                                <div class="col-2">
+                                    <div class="text-center mx-auto {{ $image->adult }}">
+                                    </div>
+                                </div>
+                                <div class="col-10">adult</div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-2">
+                                    <div class="text-center mx-auto {{ $image->violence }}">
+                                    </div>
+                                </div>
+                                <div class="col-10">violence</div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-2">
+                                    <div class="text-center mx-auto {{ $image->spoof }}">
+                                    </div>
+                                </div>
+                                <div class="col-10">spoof</div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-2">
+                                    <div class="text-center mx-auto {{ $image->racy }}">
+                                    </div>
+                                </div>
+                                <div class="col-10">racy</div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-2">
+                                    <div class="text-center mx-auto {{ $image->medical }}">
+                                    </div>
+                                </div>
+                                <div class="col-10">medical</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
+
     <div class="container">
         <div class="row justify-content-center mt-3 ">
             <div class="col-6 d-flex flex-column text-center justify-content-center">
@@ -66,71 +134,5 @@
 </div>
 @endif
 </div>
-<div class="col-md-5 ps-3">
-    <div class="card-body">
-        <h5 class="fw-bold">Labels</h5>
-        {{-- @dd($article_to_check->images) --}}
-        @foreach ($article_to_check->images as $image)
-        @if ($image->labels)
-        @foreach ($image->labels as $label)
-        #{{ $label }},
-        @endforeach
-        @else
-        <p class="fst-italic">No labels</p>
-        @endif
-    </div>
-</div>
-<div class="col-md-3 ps-3">
-    <div class="card-body">
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne{{$loop->index}}" aria-expanded="false" aria-controls="flush-collapseOne{{$loop->index}}">
-                        Ratings
-                    </button>
-                </h2>
-                <div id="flush-collapseOne{{$loop->index}}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <div class="row justify-content-center">
-                            <div class="col-2">
-                                <div class="text-center mx-auto {{ $image->adult }}">
-                                </div>
-                            </div>
-                            <div class="col-10">adult</div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-2">
-                                <div class="text-center mx-auto {{ $image->violence }}">
-                                </div>
-                            </div>
-                            <div class="col-10">violence</div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-2">
-                                <div class="text-center mx-auto {{ $image->spoof }}">
-                                </div>
-                            </div>
-                            <div class="col-10">spoof</div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-2">
-                                <div class="text-center mx-auto {{ $image->racy }}">
-                                </div>
-                            </div>
-                            <div class="col-10">racy</div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-2">
-                                <div class="text-center mx-auto {{ $image->medical }}">
-                                </div>
-                            </div>
-                            <div class="col-10">medical</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endforeach
+
 </x-layout>

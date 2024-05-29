@@ -22,29 +22,7 @@
     -webkit-box-shadow:var(--darkGreenCustom) ;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
-/* .card{
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    height: 620px;
-    width: 380px;
-}
-.card1{
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    height: 620px;
-    width: 380px;
-}
-.card-imgpers{
-    height: 250px ;
-    width: 380px;
-    border-bottom-left-radius: 5%;
-    border-bottom-right-radius: 5%;
-}
-.imgindex{
-    height: 180px ;
-    width: 350px;
-} */
-/* .card-body{
-    height: 750px;
-} */
+
 .card-img-top{
     height: 280px;
 }
@@ -119,9 +97,10 @@ h1{
     background-color: white;
 }
 input{
-
 caret-color: var(--greenLightCustom);
 }
+
+
 
 .souloutimg{
     background-image: url(/public/storage/img/Sullout_2.png);
