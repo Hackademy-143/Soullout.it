@@ -38,5 +38,11 @@ return[
     'negative1' => 'Nessun articolo da revisionare',
     'accetta' => 'Accetta',
     'rifiuta' => 'Rifiutare',
-
+    'pass'=>'La password è richiesta',
+    'email'=>'La mail è richiesta',
+    'name1'=>'Il nome è richiesto',
+    'req1'=>'Inserisci il nome del prodotto',
+    'req2'=>"Inserisci la provenienza del prodotto",
+    'req3'=>"Inserisci la descrizione del prodotto",
+    'req4'=>"Inserisci il prezzo del prodotto",
 ];

@@ -38,5 +38,11 @@ return[
     'negative1' => 'No items to review',
     'accetta' => 'Accept',
     'rifiuta' => 'Reject',
-    
+    'pass'=>'The password is required',
+    'email'=>'The email is required',
+    'name1'=>'The username is required',
+    'req1'=>"Product's name is required",
+    'req2'=>"Product's origin is required",
+    'req3'=>"Product's description is required",
+    'req4'=>"Product's price is required",
 ];

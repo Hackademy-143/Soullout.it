@@ -2,14 +2,15 @@
 
 namespace App\Livewire;
 
-use App\Jobs\GoogleVisionLabelImage;
-use App\Jobs\GoogleVisionSafeSearch;
-use App\Jobs\RemoveFaces;
 use App\Models\Article;
 use Livewire\Component;
+use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
+use App\Jobs\GoogleVisionLabelImage;
+
+use App\Jobs\GoogleVisionSafeSearch;
 use Illuminate\Support\Facades\File;
 
 class CreateArticoli extends Component
@@ -30,16 +31,6 @@ class CreateArticoli extends Component
     #[Validate('required')]
     public $category_id;
 
-    protected $messages = [
-        'nome.min' => 'Il nome è troppo corto',
-        'provenienza.min' => 'Inserire una città valida',
-        'descrizione.min' => 'Inserire una descrizione del prodotto',
-        'prezzo.min' => 'Inserire il prezzo del prodotto',
-
-        'temporary_images.*.max' => 'Il peso massimo deve essere 1MB',
-        'temporary_images.max' => 'Il massimo numero di immagini consentito è 6'
-
-    ];
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
@@ -75,9 +66,26 @@ class CreateArticoli extends Component
             }
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
-        session()->flash('success', 'Articolo creato correttamente');
+
         $this->reset();
+        session()->flash('status', 'Articolo creato correttamente');
     }
+    public function messages() 
+    {
+        return [
+            'nome.required' => __('ui.req1'),
+        'provenienza.required' => __('ui.req2'),
+        'descrizione.required' => __('ui.req3'),
+        'prezzo.required' => __('ui.req4'),
+
+        'temporary_images.*.max' => 'Il peso massimo deve essere 1MB',
+        'temporary_images.max' => 'Il massimo numero di immagini consentito è 6'
+        ];
+    }
+    protected $messages = [
+        
+
+    ];
     public function render()
     {
         return view('livewire.create-articoli');

@@ -15,14 +15,14 @@
                         <label class="form-label fw-bold">{{ __('ui.mail') }}</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror" name="email">
                         @error('email')
-                        <div class="text-danger">{{$message}}</div>
+                        <div class="text-danger">{{ __('ui.email') }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label fw-bold ">{{ __('ui.password') }}</label>
                         <input type="password" class="form-control @error('password') is-invalid @enderror " name="password">
                         @error('password')
-                        <div class="text-danger">{{$message}}</div>
+                        <div class="text-danger">{{ __('ui.pass') }}</div>
                         @enderror
                     </div>
                     <button type="submit" class="btn btn-success">{{ __('ui.submit') }}</button>

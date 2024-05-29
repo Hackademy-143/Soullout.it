@@ -10,7 +10,7 @@
         <div class="row  justify-content-center">
             @foreach ($articles as $article)
                 <div class="col-4 my-3">
-                    <div data-aos="flip-up">
+                    <div data-aos="flip-left">
                         <div class=" shadow card1">
                             <img class="card-img-top card-imgpers "
                                 src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(600, 600) : 'https://picsum.photos/200' }}"

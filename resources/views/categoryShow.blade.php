@@ -12,7 +12,7 @@
                 <div class="row justify-content-between">
                     @forelse ($category->articles as $article)
                         <div class="col-12 col-md-4 my-2">
-                            <div data-aos="zoom-in">
+                            <div data-aos="flip-left">
                                 <div class="card-shadow card1">
                                     <div class="card-body ">
                                         <img class="card-img-top card-imgpers"

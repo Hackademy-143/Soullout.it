@@ -38,5 +38,11 @@ return[
     'negative1' => 'No hay elementos para revisar',
     'accetta' => 'Aceptar',
     'rifiuta' => 'Rechazar',
-    
+    'pass'=>'Se requiere contraseña',
+    'email'=>'Se requiere correo electrónico',
+    'name1'=>'Se requiere el nombre',
+    'req1'=>'Ingrese el nombre del producto',
+    'req2'=>'Ingrese el origen del producto',
+    'req3'=>"Ingrese la descripción del producto",
+    'req4'=>"Ingrese el precio del producto",
 ];
