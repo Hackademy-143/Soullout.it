@@ -21,7 +21,7 @@
                                 <p class="card-text"> {{ substr($article->descrizione, 0, 100) }}
                                     @if (strlen($article->descrizione) >= 100) ... @endif
                                     </p>
-                                <p class="card-text">{{ $article->prezzo }}</p>
+                                <p class="card-text"> € {{ $article->prezzo }}</p>
                                 <a href="{{ route('categoryDet', $article) }}"
                                     class="btn btn-success shadow">{{ __('ui.details') }}</a>
                                 <a href="{{ route('categoryShow', $article->category) }}"

@@ -100,6 +100,19 @@ input{
 caret-color: var(--greenLightCustom);
 }
 
+.accordion--radio {
+    --theme: var(--darkGreenCustom);
+    }
+    .accordion {
+        color: var(--greenCustom);
+        border: 1px solid;
+        border-radius: 0.5rem;
+        --bs-accordion-active-bg:var(--pannaWhite);
+    }
+    .accordion-button:hover{
+        color: var(--darkGreenCustom);
+        background-color: var(--greenSuperLight);
+    }
 
 
 .souloutimg{
@@ -107,6 +120,7 @@ caret-color: var(--greenLightCustom);
     background-position: center;
     /* background-repeat: no-repeat; */
 }
+
 
 @media(max-width:768px){
     body{

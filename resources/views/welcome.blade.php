@@ -20,11 +20,11 @@
         <h2 class="text-center mt-3 mb-3 p-3">{{ __('ui.home1') }} </h2>
         <div class="row justify-content-center ">
             @foreach ($articles as $article)
-                <div class="col-12 col-md-4 mx-2">
+                <div class="col-12 col-md-4 mx-1">
                     <div data-aos="flip-left">
                         <div class="card m-2">
                             <div class="card-body">
-                                <img class="card-img-top mt-1 card-imgpers "
+                                <img class="card-img-top mt-1 "
                                 src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(600, 600) : 'https://picsum.photos/200' }}"
                                 alt="foto dell'articolo {{ $article->nome }}">
                                 <h5 class=" mt-2 card-title">{{ $article->nome }}</h5>
